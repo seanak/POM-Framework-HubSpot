@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Hub Spot Regression Suite" duration-ms="77150" started-at="2020-05-12T19:15:55Z" finished-at="2020-05-12T19:17:12Z">
+    <groups>
+    </groups>
+    <test name="Hub Spot Functional Regression Test" duration-ms="77150" started-at="2020-05-12T19:15:55Z" finished-at="2020-05-12T19:17:12Z">
+      <class name="com.qa.hubspot.tests.LoginPageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@3f19b8b3]" name="setUp" is-config="true" duration-ms="10142" started-at="2020-05-12T21:16:20Z" finished-at="2020-05-12T21:16:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyLoginPageTitle_test()[pri:1, instance:com.qa.hubspot.tests.LoginPageTest@3f19b8b3]" name="verifyLoginPageTitle_test" duration-ms="1309" started-at="2020-05-12T21:16:30Z" description="verify LoginPageTitle_test " finished-at="2020-05-12T21:16:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginPageTitle_test -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@3f19b8b3]" name="teardown" is-config="true" duration-ms="1074" started-at="2020-05-12T21:16:31Z" finished-at="2020-05-12T21:16:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@3f19b8b3]" name="setUp" is-config="true" duration-ms="9510" started-at="2020-05-12T21:16:32Z" finished-at="2020-05-12T21:16:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="checkSignuplink_Test()[pri:2, instance:com.qa.hubspot.tests.LoginPageTest@3f19b8b3]" name="checkSignuplink_Test" duration-ms="2324" started-at="2020-05-12T21:16:42Z" finished-at="2020-05-12T21:16:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkSignuplink_Test -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@3f19b8b3]" name="teardown" is-config="true" duration-ms="953" started-at="2020-05-12T21:16:44Z" finished-at="2020-05-12T21:16:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@3f19b8b3]" name="setUp" is-config="true" duration-ms="9067" started-at="2020-05-12T21:16:45Z" finished-at="2020-05-12T21:16:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="doLogin_Test()[pri:4, instance:com.qa.hubspot.tests.LoginPageTest@3f19b8b3]" name="doLogin_Test" duration-ms="8998" started-at="2020-05-12T21:16:54Z" description="login test with correct username and correct password..." finished-at="2020-05-12T21:17:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doLogin_Test -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@3f19b8b3]" name="teardown" is-config="true" duration-ms="1476" started-at="2020-05-12T21:17:03Z" finished-at="2020-05-12T21:17:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.qa.hubspot.tests.LoginPageTest -->
+      <class name="com.qa.hubspot.tests.HomePageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.HomePageTest@2f08c4b]" name="setUp" is-config="true" duration-ms="24391" started-at="2020-05-12T21:15:55Z" finished-at="2020-05-12T21:16:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="homePageTitleTest()[pri:1, instance:com.qa.hubspot.tests.HomePageTest@2f08c4b]" name="homePageTitleTest" duration-ms="111" started-at="2020-05-12T21:17:05Z" finished-at="2020-05-12T21:17:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homePageTitleTest -->
+        <test-method status="PASS" signature="verifyHeader_Test()[pri:2, instance:com.qa.hubspot.tests.HomePageTest@2f08c4b]" name="verifyHeader_Test" duration-ms="787" started-at="2020-05-12T21:17:05Z" finished-at="2020-05-12T21:17:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHeader_Test -->
+        <test-method status="PASS" signature="checkCreatDashbtn_Test()[pri:3, instance:com.qa.hubspot.tests.HomePageTest@2f08c4b]" name="checkCreatDashbtn_Test" duration-ms="738" started-at="2020-05-12T21:17:06Z" finished-at="2020-05-12T21:17:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkCreatDashbtn_Test -->
+        <test-method status="PASS" signature="goToContactpage_test()[pri:4, instance:com.qa.hubspot.tests.HomePageTest@2f08c4b]" name="goToContactpage_test" duration-ms="4289" started-at="2020-05-12T21:17:06Z" finished-at="2020-05-12T21:17:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToContactpage_test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.HomePageTest@2f08c4b]" name="tearDown" is-config="true" duration-ms="1039" started-at="2020-05-12T21:17:11Z" finished-at="2020-05-12T21:17:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.hubspot.tests.HomePageTest -->
+    </test> <!-- Hub Spot Functional Regression Test -->
+  </suite> <!-- Hub Spot Regression Suite -->
+</testng-results>
