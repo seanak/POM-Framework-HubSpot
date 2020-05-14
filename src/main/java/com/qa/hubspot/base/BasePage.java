@@ -44,27 +44,29 @@ public class BasePage {
 			
 			WebDriverManager.chromedriver().setup(); //System.setProperty("webdriver.chrome.driver", "C:\\googleChromeDriver\\chromedriver_win32new81\\chromedriver.exe");
 			
-			
 			tldriver.set(new ChromeDriver(optionsmanager.getChromeOptions())); 
 			
 			
-			
 		}else if (browserName.equals("firefox")) {
+
 			
 			WebDriverManager.firefoxdriver().setup();
 			
-			tldriver.set(new FirefoxDriver(optionsmanager.getFirefoxOptions()));//driver= new FirefoxDriver(optionsmanager.getFirefoxOptions());
+			tldriver.set(new FirefoxDriver(optionsmanager.getFirefoxOptions()));
 			
 			
+			
+		}else if (browserName.equals("safari")) {	
 			
 			WebDriverManager.getInstance(SafariDriver.class).setup();
-			//driver = new SafariDriver();
-			tldriver.set(new SafariDriver());
 			
-			
+			tldriver.set( new SafariDriver());
+
 		}else {
+			
 			System.out.println(browserName +" is not found please pass the correct browser name");
 		}
+			
 		 getDriver().manage().deleteAllCookies();
 		 getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		// driver.get();
@@ -122,7 +124,7 @@ public class BasePage {
 	
 		public String getScreenshot(){
 			File src = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
-			String path = "C:/Users/seana/New Workspace/1AseleniumNewProjectApril20Pract/screenshots"+System.currentTimeMillis()+".png";
+			String path = "C:/Users/seana/New Workspace/1AseleniumNewProjectApril20Pract/screenshots/"+System.currentTimeMillis()+".png";
 			File destination = new File ( path);
 			try {
 				FileUtils.copyFile(src, destination);

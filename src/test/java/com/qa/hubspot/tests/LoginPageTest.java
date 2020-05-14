@@ -10,6 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.qa.hubspot.base.BasePage;
@@ -41,16 +42,30 @@ public class LoginPageTest {
 	Credentials usercrd;
 	
 	
-	@BeforeMethod 
-	public void setUp() throws InterruptedException {
+	@BeforeMethod(alwaysRun= true)
+	@Parameters(value = {"browser"})
+	public void setUp(String browser) {
+		
+		String browsername=null;
+		
 	  basepage = new BasePage();
 	  prop =  basepage.init_properties();
-	  String browsername= prop.getProperty("browser");
+	  
+	  
+	  
+	  if(browser.equals(null)){
+	  browsername= prop.getProperty("browser");
+	  }else{
+		  browsername = browser;
+	  }
+	  
+	  
+	  
+	  
 	  driver = basepage.init_driver(browsername);
 	  driver.get(prop.getProperty("url"));
 	  loginpage = new LoginPage(driver);
 	  usercrd = new Credentials(prop.getProperty("username"), prop.getProperty("password"));
-	  Thread.sleep(5000);
 	             
 	  }
 	
@@ -104,7 +119,7 @@ public class LoginPageTest {
 		}
 	
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun= true)
 	public void teardown() {
 		driver.quit();
 	}
