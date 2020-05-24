@@ -5,20 +5,24 @@
   <listeners>
     <listener class-name="com.qa.hubspot.listeners.TestAllureListeners"/>
   </listeners>
-  <test name="Hub Spot Functional Regression Test - firefox(failed)" parallel="tests">
-    <parameter name="browser" value="firefox"/>
+  <test name="Hub Spot Functional Regression Test - chrome(failed)" parallel="classes">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.qa.hubspot.tests.LoginPageTest">
         <methods>
-          <include name="checkSignuplink_Test"/>
-          <include name="doLogin_Test"/>
           <include name="setUp"/>
           <include name="setUp"/>
-          <include name="verifyLoginPageTitle_test"/>
           <include name="teardown"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- com.qa.hubspot.tests.LoginPageTest -->
+      <class name="com.qa.hubspot.tests.HomePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyHeader_Test"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.tests.HomePageTest -->
     </classes>
-  </test> <!-- Hub Spot Functional Regression Test - firefox(failed) -->
+  </test> <!-- Hub Spot Functional Regression Test - chrome(failed) -->
 </suite> <!-- Failed suite [Hub Spot Regression Suite] -->
