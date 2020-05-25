@@ -8,7 +8,7 @@ public class AppConstants {
 	
 	public final static String homePageTitle = "Reports dashboard";
 	
-	public final static String homePageHeader = "Marketing Dashboard";
+	public final static String homePageHeader = "Sales Dashboard";
 	
 	public final static String contactPageTitle = "Contacts";
 	

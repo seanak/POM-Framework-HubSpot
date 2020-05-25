@@ -10,7 +10,7 @@
 	<!--check spelling by each word packageName then className -->
 	
 		<listener class-name="com.qa.hubspot.listeners.TestAllureListeners"/>
-		
+		<listener class-name="com.qa.hubspot.listeners.TesultsListener"/>
 	</listeners>
 	
 
