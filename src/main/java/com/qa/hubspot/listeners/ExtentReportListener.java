@@ -1,5 +1,6 @@
 package com.qa.hubspot.listeners;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,6 +9,10 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -26,10 +31,10 @@ public class ExtentReportListener extends BasePage implements ITestListener {
 	private static final String FILE_NAME = "TestExecutionReport.html";
 
 	private static ExtentReports extent = init();
-	public static ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>(); //for parallel mode this is imp
+	public static ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
 
 	private static ExtentReports init() {
- 
+
 		Path path = Paths.get(OUTPUT_FOLDER);
 		// if directory exists?
 		if (!Files.exists(path)) {
@@ -92,7 +97,7 @@ public class ExtentReportListener extends BasePage implements ITestListener {
 
 	public synchronized void onTestFailure(ITestResult result) {
 		System.out.println((result.getMethod().getMethodName() + " failed!"));
-	try {
+		try {
 			test.get().fail(result.getThrowable(),
 					MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		} catch (IOException e) {
@@ -126,5 +131,4 @@ public class ExtentReportListener extends BasePage implements ITestListener {
 
 	
 
-	
 }

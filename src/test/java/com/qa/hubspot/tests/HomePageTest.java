@@ -19,7 +19,6 @@ import com.qa.hubspot.page.HomePage;
 import com.qa.hubspot.page.LoginPage;
 import com.qa.hubspot.util.AppConstants;
 import com.qa.hubspot.util.Credentials;
-import com.qa.hubspot.util.ElementUtil;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;

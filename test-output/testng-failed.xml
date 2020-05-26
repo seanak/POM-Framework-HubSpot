@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Hub Spot Regression Suite]" parallel="tests">
-  <parameter name="browser" value="firefox"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Hub Spot Regression Suite]">
   <listeners>
     <listener class-name="com.qa.hubspot.listeners.TestAllureListeners"/>
     <listener class-name="com.qa.hubspot.listeners.TesultsListener"/>
   </listeners>
-  <test name="Hub Spot Functional Regression Test - firefox(failed)" parallel="tests">
-    <parameter name="browser" value="firefox"/>
+  <test name="Hub Spot Functional Regression Test(failed)">
     <classes>
       <class name="com.qa.hubspot.tests.LoginPageTest">
         <methods>
           <include name="checkSignuplink_Test"/>
           <include name="doLogin_Test"/>
-          <include name="setUp"/>
-          <include name="setUp"/>
-          <include name="teardown"/>
+          <include name="verifyLoginPageTitle_test"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- com.qa.hubspot.tests.LoginPageTest -->
-      <class name="com.qa.hubspot.tests.HomePageTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.qa.hubspot.tests.HomePageTest -->
     </classes>
-  </test> <!-- Hub Spot Functional Regression Test - firefox(failed) -->
+  </test> <!-- Hub Spot Functional Regression Test(failed) -->
 </suite> <!-- Failed suite [Hub Spot Regression Suite] -->

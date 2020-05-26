@@ -86,7 +86,7 @@ public class LoginPageTest {
 		
 	}
 	
-
+/*
 	
 	@DataProvider
 	public Object[][] getInvalidData() {
@@ -100,7 +100,7 @@ public class LoginPageTest {
 		return data;
 	}
 	//negative test case
-		@Test (priority = 3, dataProvider = "getInvalidData", enabled = false)
+		@Test (priority = 4, dataProvider = "getInvalidData", enabled = false)
 		public void login_invalidTestCases(String username, String pwd) throws InterruptedException {
 			usercrd.setAppUsername(username);
 			usercrd.setAppPassword(pwd);
@@ -108,8 +108,9 @@ public class LoginPageTest {
 			
 			//Assert.assertEquals(homepage.getHomePageTitle(), prop.getProperty("homePageTitle"));
 		}
-		
-		@Test (priority = 4, description= "login test with correct username and correct password...")
+*/
+	
+		@Test (priority = 3, description= "login test with correct username and correct password...")
 		@Description("login in to home page_Test ")
 		@Severity( SeverityLevel.BLOCKER)
 		public void doLogin_Test() {
