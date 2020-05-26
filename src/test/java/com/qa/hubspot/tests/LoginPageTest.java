@@ -59,15 +59,14 @@ public class LoginPageTest {
 		  browsername = browser;
 	  }
 	  
-	  
-	  
-	  
 	  driver = basepage.init_driver(browsername);
 	  driver.get(prop.getProperty("url"));
 	  loginpage = new LoginPage(driver);
 	  usercrd = new Credentials(prop.getProperty("username"), prop.getProperty("password"));
 	             
 	  }
+	
+	
 	
 	@Test(priority = 1, description = "verify LoginPageTitle_test ")// this description from testNg 
 	@Description("verify LoginPageTitle_test ")// this description from Allure 
@@ -77,6 +76,9 @@ public class LoginPageTest {
 		System.out.println("login page title is :- " + logtitle);
 		assertEquals(logtitle,AppConstants.loginPageTitle );
 	}
+	
+	
+	
 	
 	@Test (priority = 2)
 	@Description("verify check SingnUp link_test ")

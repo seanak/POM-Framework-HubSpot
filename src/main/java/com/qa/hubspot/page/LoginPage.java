@@ -49,15 +49,20 @@ public class LoginPage extends BasePage {
 		}
 	
 	public HomePage doLogin(Credentials usercrd){
+		System.out.println("everything fime till here 1");
 		elementutil.waitForElementPresent(emailid);
+		System.out.println("everything fime till here 2");
 		elementutil.doSendKeys(emailid, usercrd.getAppUsername());
+		System.out.println("everything fime till here 3");
 		elementutil.doSendKeys(password, usercrd.getAppPassword());
 		elementutil.doClick(loginbutton);
 		elementutil.waitForElementVisiable(homePageheader);
+		
+		String HomePTAdoLogin =driver.getTitle();
 		/*driver.findElement(emailid).sendKeys(username);;
 		driver.findElement(password).sendKeys(pwd);
 		driver.findElement(loginbutton).click();*/
-		
+		System.out.println("verfiying title after doLogin ON LoginPage for HP "+HomePTAdoLogin );
 		return new HomePage(driver);
 	}
 }
