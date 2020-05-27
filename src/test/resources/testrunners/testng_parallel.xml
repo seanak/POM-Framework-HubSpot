@@ -25,10 +25,10 @@
 		<parameter name = "browser" value = "chrome"/>
 		
 		<classes>
-			<class name= "com.qa.hubspot.tests.LoginPageTest"/>
-			<!--  
+		
+			<class name= "com.qa.hubspot.tests.LoginPageTest"/> 
 			<class name= "com.qa.hubspot.tests.HomePageTest"/>
-			-->
+		
 		</classes>
 	</test>
 	
