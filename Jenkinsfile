@@ -4,10 +4,9 @@ pipeline {
 	    maven 'M3'
 	  }
 	  stages {
-	    stage('build') {
+	    stage('Build') {
 	      steps {
-	        sh 'mvn clean install'
-	        echo 'everything fine until sh mvn clean install'
+	        sh 'mvn clean test'
 	      }
 	    }
 	  
@@ -15,14 +14,16 @@ pipeline {
 	stage('reports') {
 	    steps {
 	    script {
-	            allure 
-	            includeProperties: false, 
-	            jdk: '', 
-	            results: [[path: '/allure-results']]
-	          
-	           
+	            allure([
+	                    includeProperties: false,
+	                    jdk: '',
+	                    properties: [],
+	                    reportBuildPolicy: 'ALWAYS',
+	                    results: [[path: '/allure-results']]
+	            ])
 	            
-	          
+	        
+	        		 
 	    }
 	    }
 	}
