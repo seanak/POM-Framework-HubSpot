@@ -1,86 +1,37 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build Dev') {
-      parallel {
-        stage('Build Dev') {
-          steps {
-            sh 'mvn clean install -DskipTests=true'
-          }
-        }
+	  agent any
+	  tools {
+	    maven 'M3'
+	  }
+	  stages {
+	    stage('Build') {
+	      steps {
+	        withMaven(maven : 'apache-maven-3.6.1') {
+                bat'mvn clean compile'
+                
+               }
+	      }
+	    }
+	  
+	  
+	stage('reports') {
+	    steps {
+	    script {
+	            allure([
+	                    includeProperties: false,
+	                    jdk: '',
+	                    properties: [],
+	                    reportBuildPolicy: 'ALWAYS',
+	                    results: [[path: '/allure-results']]
+	            ])
+	            
+	          
+	    }
+	    }
+	}
+	
 
-        stage('chrome') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=chrome'
-          }
-        }
+	}
+	
 
-      }
-    }
-
-    stage('Build QA') {
-      parallel {
-        stage('Build QA') {
-          steps {
-            sh 'mvn clean install -DskipTests=true'
-          }
-        }
-
-        stage('chrome') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=chrome'
-          }
-        }
-
-        stage('firefox') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=firefox'
-          }
-        }
-
-      }
-    }
-
-    stage('Build Stage') {
-      parallel {
-        stage('Build Stage') {
-          steps {
-            sh 'mvn clean install -DskipTests=true'
-          }
-        }
-
-        stage('firefox') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=firefox'
-          }
-        }
-
-        stage('chrome') {
-          steps {
-            sh 'mvn test -Denv=qa -Dbrowser=chrome'
-          }
-        }
-
-      }
-    }
-
-    stage('Publish reports') {
-      steps {
-        script {
-          allure([
-            includeProperties: false,
-            jdk: '',
-            properties: [],
-            reportBuildPolicy: 'ALWAYS',
-            results: [[path: '/allure-results']]
-          ])
-        }
-
-      }
-    }
-
-  }
-  tools {
-    maven 'M3'
-  }
-}
+	}
